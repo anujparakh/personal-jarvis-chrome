@@ -1,0 +1,22 @@
+body {
+    background: #222;
+}
+
+input {
+    padding: 8px 20px;
+    width: 100px;
+    margin: 8px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background: #111;
+    color: #ddd;
+    font-size: 18px;
+    text-align: center;
+}
+
+input:focus {
+    outline: 3px solid #22a7df;
+    border: none;
+}
