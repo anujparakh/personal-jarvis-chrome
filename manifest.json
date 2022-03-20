@@ -20,5 +20,8 @@
         "tabs",
         "scripting",
         "webNavigation"
-    ]
+    ],
+    "icons": {
+        "128": "res/icon.png"
+    }
 }
