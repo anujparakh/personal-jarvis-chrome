@@ -2,13 +2,20 @@
 
 const TABS_WARNING_LIMIT = 8
 
-function checkIfGitlab(url) {
+function checkIfGitlabAngi(url) {
     return url.match("https://gitlab.com/git/angi1/.*")
 }
 
+function checkIfGitHubAngi(url) {
+    return url.match("https://github.com/angieslist/.*")
+}
+
 chrome.webNavigation.onBeforeNavigate.addListener(async (tab) => {
-    if (checkIfGitlab(tab.url)) {
+    if (checkIfGitlabAngi(tab.url)) {
         chrome.tabs.update(tab.id, { url: tab.url.replace("git/", "") });
+    }
+    else if (checkIfGitHubAngi(tab.url)) {
+        chrome.tabs.update(tab.id, { url: tab.url.replace("github.com/", "gitlab.com/angi1/") });
     }
 })
 
