@@ -11,6 +11,14 @@ function checkIfGitHubAngi(url) {
 }
 
 chrome.webNavigation.onBeforeNavigate.addListener(async (tab) => {
+
+    let filterOn = (await chrome.storage.sync.get("filter")).filter
+    console.log(filterOn)
+    // Make sure filter is on
+    if (!filterOn) {
+        return
+    }
+
     if (checkIfGitlabAngi(tab.url)) {
         chrome.tabs.update(tab.id, { url: tab.url.replace("git/", "") });
     }
@@ -38,3 +46,8 @@ chrome.tabs.onCreated.addListener(async (tab) => {
 chrome.tabs.onRemoved.addListener(async (tab) => {
     updateTabNumberBadge()
 })
+
+// Default value for filter-on is true
+chrome.runtime.onInstalled.addListener(() => {
+    chrome.storage.sync.set({ 'filter': true })
+});

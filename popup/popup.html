@@ -1,12 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="popup.css">
-  </head>
-  <body class="bootstrap-dark">
-    <form id="ticket-form">
-      <input class="m-3" id="ticket-input" placeholder="Enter #" autofocus>
-    </form>
-    <script src="popup.js"></script>
-  </body>
+    <head>
+        <link rel="stylesheet" href="popup.css" />
+    </head>
+    <body>
+        <div class="switch-div">
+            <label class="switch">
+                <input id="filter-switch" type="checkbox" checked/>
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+        <form id="ticket-form">
+            <input
+                class="m-3"
+                id="ticket-input"
+                placeholder="Enter #"
+                autofocus
+            />
+        </form>
+
+        <script src="popup.js"></script>
+    </body>
 </html>

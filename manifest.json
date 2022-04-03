@@ -16,9 +16,10 @@
         }
     },
     "permissions": [
+        "storage",
         "activeTab",
-        "tabs",
         "scripting",
+        "tabs",
         "webNavigation"
     ],
     "icons": {
